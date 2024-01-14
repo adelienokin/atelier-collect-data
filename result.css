@@ -1,0 +1,18 @@
+h1{
+
+    font-weight: 100;
+ 
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+
+    
+}
+#bouton{
+    position: absolute;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    top: 20%;
+    left: 40%;
+
+}

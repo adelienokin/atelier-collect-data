@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>le prix de votre prénom est de : </title>
+    <style>
+        body {
+            background-color: #e2b2d8;
+        }
+        body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      margin: 0;
+    }
+    .generator-container {
+      text-align: center;
+    }
+    #resultatNombre {
+      text-align: center;
+      margin-top: 10px; /
+    }
+
+    #boutonGenerer {
+      /* Personnalisation du bouton */
+      background-color: #392a38;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+
+    }
+
+      
+        
+     
+ 
+
+
+        
+    </style>
+</head>
+<body>
+    
+    <div class="generator-container">
+      <h1>Découvrez ce que vaut votre identité !</h1>
+
+    
+     <button onclick="genererNombre()" id="boutonGenerer">découvrir</button>
+
+     <div id="resultatNombre">
+      <p id="nombreAleatoire"></p>
+    </div>
+</div>
+
+
+
+
+<script>
+  let nombreGenere = false;
+  function genererNombre() {
+    if (!nombreGenere) {
+    // Générer un nombre aléatoire entre 1 et 100 (modifiable selon les besoins)
+    const nombre = Math.floor(Math.random() * 1000) + 1;
+    
+    // Afficher le nombre généré dans la balise <p> avec l'id "découvrir"
+    document.getElementById('boutonGenerer').innerText = 'Votre valeur en euros est : ' + nombre;
+    nombreGenere = true;
+    document.getElementById('boutonGenerer').disabled = true;
+  }
+}
+</script>
+</body>
+</html>
