@@ -2,10 +2,19 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>inserer votre prénom et vendez le</title>
+    <title>Insérez votre prénom et vendez-le</title>
     <style>
         body {
-            background-color: #e2b2d8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('vendezvotreprenom.png'); /* Remplacez 'chemin/vers/votre-image.png' par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white; /* Couleur du texte sur l'image */
 
 
         }
@@ -32,14 +41,11 @@
 <body>
    
     <div class="container">
-        <h1>inserer votre prénom et vendez le</h1>
-        <form<p>
-            <!-- c'est une dinguerie de faire ça -->
-            <a href="result.html" target="_blank">voir le résultat</a>
-        </p>
+        <h1>Insérez votre prénom et vendez-le</h1>
+        <form action="result.html" method="GET" target="_blank">
             <input type="text" name="mot" placeholder="Insérez votre prénom ici" required>
             <br>
-            <input type="submit" value="valider">
+            <input type="submit" value="Valider et Voir le Résultat">
         </form>
     </div>
 </body>
