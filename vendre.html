@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendez votre prénom</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('vendezvotreprenom.png'); /* Remplacez 'chemin/vers/votre-image.png' par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: rgb(46, 26, 37); /* Couleur du texte sur l'image */
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            width: 50%;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #3b202d;
+            border-radius: 8px;
+            margin-bottom: 20px; /* Ajout de marge en bas du formulaire */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #b56eb4;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #59455a;
+        }
+        #boutonRedirection {
+            /* Personnalisation du bouton de redirection */
+            background-color: #392a38;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            display: none; /* Le bouton de redirection est initialement caché */
+        }
+
+    </style>
+</head>
+<body>
+<h2>Vendez votre prénom</h2>
+
+<div>
+    <button onclick="redirigerVersAutrePage()" id="boutonRedirection">Aller vers la boutique</button>
+</div>
+
+<form action="#" method="post" id="descriptionForm">
+    <label for="title">Prénom :</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+
+    <label for="rating">Prix obtenu en euros :</label>
+    <input type="number" id="rating" name="rating" min="1" max="1000" required>
+
+    <input type="submit" value="Vendre" onclick="changeButtonText()">
+</form>
+<script>
+    function changeButtonText() {
+        var button = document.querySelector('input[type="submit"]');
+        button.value = "Vendu !";
+    }
+    
+    document.getElementById("descriptionForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById('boutonRedirection').style.display = 'inline-block'; // Afficher le bouton de redirection
+        
+        var title = document.getElementById("title").value;
+        var description = document.getElementById("description").value;
+        var rating = document.getElementById("rating").value;
+
+        console.log("Prénom:", title);
+        console.log("Description:", description);
+        console.log("Prix:", rating);
+
+        // Vous pouvez ajouter ici d'autres actions après la soumission du formulaire
+        // Par exemple, afficher un message de succès ou effectuer une autre action.
+    });
+    
+    function redirigerVersAutrePage() {
+        window.location.href = 'boutique.html'; // Remplacez 'boutique.html' par le nom de votre page
+    }
+</script>
+
+</body>
+</html>

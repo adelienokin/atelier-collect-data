@@ -54,6 +54,17 @@
       font-size: 16px;
 
     }
+    #boutonRedirection {
+            /* Personnalisation du bouton de redirection */
+            background-color: #392a38;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            display: none; /* Le bouton de redirection est initialement caché */
+        }
 
       
         
@@ -75,6 +86,7 @@
      <div id="resultatNombre">
       <p id="nombreAleatoire"></p>
     </div>
+    <button onclick="redirigerVersAutrePage()" id="boutonRedirection">Vendre mon prénom</button>
 </div>
 
 
@@ -91,8 +103,13 @@
     document.getElementById('boutonGenerer').innerText = 'Votre valeur en euros est : ' + nombre + '€';
     nombreGenere = true;
     document.getElementById('boutonGenerer').disabled = true;
+    document.getElementById('boutonRedirection').style.display = 'inline-block'; // Afficher le bouton de redirection
   }
 }
+function redirigerVersAutrePage() {
+    window.location.href = 'vendre.html'; // Remplacez 'ma-page.html' par le nom de votre page
+}
+
 </script>
 </body>
 </html>
